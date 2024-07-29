@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Interface</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/interface-styles.css">
+    <link rel="stylesheet" href="../css/teacher/teacher-classroom-interface.css">
+    <link rel="stylesheet" href="../css/teacher/teacher-resources-interface.css">
+    <link rel="stylesheet" href="../css/teacher/teacher-homework-interface.css">
+    <link rel="stylesheet" href="../css/teacher/teacher-community-interface.css">
+</head>
+
+<body>
+    <div class="error-box"><label></label>
+        <div class="close-btn">
+            <img src="../svg/close-svgrepo-com.svg" alt="">
+        </div>
+    </div>
+    <div class="profile-bx">
+        <div class="user-info">
+            <img src="" alt="user profile" id="user-profile-pic">
+            <lable class="user-name" id="pr-user-name">
+                <!--name-->
+            </lable>
+            <!-- <label class="user-class" id="pr-class-name">10-C</label> -->
+        </div>
+        <a href="../php/logout.php">
+            <div class="log-out-btn">
+                <img src="../svg/log-out-circle-svgrepo-com.svg" alt="">
+            </div>
+        </a>
+
+        <div class="toggle-btn">
+            <img src="../svg/left-arrow-backup-2-svgrepo-com.svg" alt="" class="left-arrow">
+            <img src="../svg/right-arrow-backup-2-svgrepo-com.svg" alt="" class="right-arrow">
+        </div>
+    </div>
+
+    <!-- nav bar -->
+    <nav>
+        <ul>
+            <li class="active" id="classroom-btn">
+                <span class="icon">
+                    <img src="../svg/home-svgrepo-com.svg">
+                </span>
+                <span class="title">Classroom</span>
+            </li>
+
+            <li id="resources-btn">
+                <span class="icon">
+                    <img src="../svg/resource-management-database-svgrepo-com.svg">
+                </span>
+                <span class="title">Resources</span>
+            </li>
+
+            <li id="homeworks-btn">
+                <span class="icon">
+                    <img src="../svg/books-thin-svgrepo-com.svg">
+                </span>
+                <span class="title">Homeworks</span>
+            </li>
+
+            <li id="community-btn">
+                <span class="icon">
+                    <img src="../svg/community-manager-svgrepo-com.svg">
+                </span>
+                <span class="title">Community</span>
+            </li>
+            <a href="./database.html">
+                <li id="database-btn">
+                    <span class="icon">
+                    <img src="../svg/database-svgrepo-com.svg">
+                </span>
+                    <span class="title">Database</span>
+                </li>
+            </a>
+
+
+        </ul>
+    </nav>
+
+    <div class="background-anime-box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="site-loader">
+        <div class='loading-container'>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <main>
+        <section class="classroom active">
+
+            <div class="start-stream container  active">
+                <h4>Create a room..</h4>
+                <button id="create-room-btn">Start</button>
+            </div>
+            <div class="create-room-form container">
+                <h1>room details</h1>
+                <form id="create-room-form">
+                    <div class="sub-select-box box">
+                        <label>Choose Subject :</label>
+                        <select id="class-form-sub-select" name="room-subject">
+                        </select>
+                    </div>
+                    <div class="class-select-box box">
+                        <fieldset>
+                            <legend>Selected Classes</legend>
+                            <label>No class selected.</label>
+                        </fieldset>
+                        <div class="choose-subjects">Choose Classes</div>
+                    </div>
+                    <div class="time-box box">
+                        <lable>Time period :</lable>
+                        <label><input type="time" name="start-time"><label>To</label><input type="time" name="end-time"></label>
+                    </div>
+                    <div class="link-box box">
+                        <lable>Paste class Link Here :</lable>
+                        <div class="input-link-box">
+                            <input type="text" name="room-link" required>
+                            <div class="paste-btn">
+                                <img src="../svg/paste-svgrepo-com.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit-box box">
+                        <button class="submit-btn" id="launch-room-btn">Launch</button>
+                    </div>
+                </form>
+                <div class="close-btn">
+                    <img src="../svg/close-svgrepo-com.svg" alt="">
+                </div>
+            </div>
+            <div class="end-stream container">
+                <h1>Now Streaming..</h1>
+                <h1 id="steaming-subject">Science</h1>
+                <div class="streaming-sign">
+                    <img src="../svg/xplayer-svgrepo-com.svg" alt="">
+                </div>
+                <div class="streaming-clases">
+                    <!-- <label>10-c</label> -->
+                </div>
+                <div class="end-stream-btn-box">
+                    <button class="end-stream-btn" id="end-stream-btn">END STREAM</button>
+                </div>
+            </div>
+            <div class="class-selection container">
+                <!-- <div id="slhg">10-c</div> -->
+                <label class="close-btn">
+                    <img src="../svg/close-svgrepo-com.svg" alt="">
+                </label>
+            </div>
+            <div class="semi-error-box container">10-C class already have a class</div>
+
+        </section>
+
+        <!-- Resources -->
+        <section class="resources">
+            <div class="container">
+                <div class="add-resourse-box">
+                    <div class="add-resourse-btn-box active">
+                        <div class="add-resourse-btn">Add resource</div>
+                    </div>
+                    <div class="add-resourse-form">
+                        <div class="close-btn">
+                            <img src="../svg/close-svgrepo-com.svg" alt="">
+                        </div>
+                        <h1>Resource Details</h1>
+                        <form action="" enctype='multipart/form-data' id="res-upload-form">
+                            <div class="title-box">
+                                <label>Title</label>
+                                <input type="text" name="res-title" required>
+                            </div>
+                            <div class="info-box">
+                                <label>info</label>
+                                <textarea rows="5" name="res-info"></textarea>
+                            </div>
+                            <div class="sub-select-box">
+                                <label>subject :</label>
+                                <select id="res-form-sub-select" name="res-subject"></select>
+                            </div>
+                            <div class="class-select-box">
+                                <fieldset>
+                                    <legend>selected classes</legend>
+                                    <label>no class selected.</label>
+                                </fieldset>
+                                <div class="choose-class-btn">choose classes</div>
+                            </div>
+                            <div class="select-file-box">
+                                <label for="selected-resource-file">choose your file</label>
+                                <input type="file" name="resfile" id="selected-resource-file">
+                            </div>
+                            <div class="upload-res-box">
+                                <input type="submit" value="upload" class="upload-res-box-btn">
+                            </div>
+                            <div class="class-selection">
+                                <label class="close-btn" for="">
+                                    <img src="../svg/close-svgrepo-com.svg" alt="">
+                                </label>
+                                <!-- <div id="ddw">10-c</div> -->
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="uploaded-resources">
+                    <div class="uploaded-resources-head">
+                        <div class="left">
+                            <label for="">Subject :</label>
+                            <select id="upres-sub-select">
+                                <option value="all" selected>All</option>
+                            </select>
+                        </div>
+                        <div class="right">
+                            <label for="">class :</label>
+                            <select name="" id="upres-class-select">
+                                <option value="all" selected>All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="uploaded-resources-list">
+                        <ul id="upres-ul">
+                            <!-- <label>You have no Uploaded resources.</label> -->
+                            <li>
+                                <div class="title lbl">
+                                    <h5>Title</h5>The world of peace</div>
+                                <div class="subject lbl">
+                                    <h5>subject</h5>history</div>
+                                <div class="date lbl">
+                                    <h5>date</h5>10/10</div>
+                                <div class="delete-btn">
+                                    <img src="../svg/delete-2-svgrepo-com.svg" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title lbl">
+                                    <h5>Title</h5>The world of peace</div>
+                                <div class="subject lbl">
+                                    <h5>subject</h5>history</div>
+                                <div class="date lbl">
+                                    <h5>date</h5>10/10</div>
+                                <div class="delete-btn">
+                                    <img src="../svg/delete-2-svgrepo-com.svg" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title lbl">
+                                    <h5>Title</h5>The world of peace</div>
+                                <div class="subject lbl">
+                                    <h5>subject</h5>history</div>
+                                <div class="date lbl">
+                                    <h5>date</h5>10/10</div>
+                                <div class="delete-btn">
+                                    <img src="../svg/delete-2-svgrepo-com.svg" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title lbl">
+                                    <h5>Title</h5>The world of peace</div>
+                                <div class="subject lbl">
+                                    <h5>subject</h5>history</div>
+                                <div class="date lbl">
+                                    <h5>date</h5>10/10</div>
+                                <div class="delete-btn">
+                                    <img src="../svg/delete-2-svgrepo-com.svg" alt="">
+                                </div>
+                            </li>
+
+                            <div class="more-btn">More</div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Homework -->
+        <section class="homeworks">
+            <div class="container">
+                <div class="add-homework-btn-box">
+                    <a href="../html/add-homework.html"><button class="grow-btn">ADD Homework</button></a>
+                </div>
+                <div class="see-homework-btn-box"><button class="grow-btn">uploaded Homework</button></div>
+                <div class="student-homework-box">
+                    <div class="student-homework-box-head">
+                        <div class="left">
+                            <label for="">Subject :</label>
+                            <select name="" id="hw-sub-select">
+                                <option value="all" selected>all</option>
+                            </select>
+                        </div>
+                        <div class="right">
+                            <label for="">class :</label>
+                            <select name="" id="hw-class-select">
+                                <option value="all" selected>all</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="student-homework-list">
+                        <ul id="st-up-homeworks">
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara Dahanayaka</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <li>
+                                <div class="homework-no">sci00129900</div>
+                                <div class="st-name">dasun sathsara</div>
+                                <div class="st-class">10-c</div>
+                                <div class="see-btn">see</div>
+                            </li>
+                            <div class="see-more">see more</div>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Community -->
+        <section class="community">
+            <div class="container">
+                <div class="community-head-box">
+                    <label for="" class="active">student</label>
+                    <label for="">teacher</label>
+                </div>
+                <div class="community-search-box">
+                    <div class="input-search-box">
+                        <input type="text" id="com-search-input">
+                        <div class="search-icon">
+                            <img src="../svg/search-square-svgrepo-com.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="community-list">
+                    <ul id="com-search-ul">
+                        <!-- <label class="active">No result..</label> -->
+                        <!-- <li>
+                            <div class="profile-pic">
+                                <img src="" alt="">
+                            </div>
+                            <div class="user-name">Dasun Sathsara</div>
+                            <div class="user-class">10-c</div>
+                        </li> -->
+
+                        <div class="more-btn">see more</div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="../js/interface.js"></script>
+    <script src="../js/functions.js"></script>
+    <script src="../js/teacher-interface.js"></script>
+</body>
+
+</html>

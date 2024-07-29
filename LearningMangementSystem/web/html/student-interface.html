@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Interface</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/interface-styles.css">
+    <link rel="stylesheet" href="../css/student/student-classroom-styles.css">
+    <link rel="stylesheet" href="../css/student/student-resources-styles.css">
+    <link rel="stylesheet" href="../css/student/student-homework-styles.css">
+    <link rel="stylesheet" href="../css/student/student-comminity-style.css">
+</head>
+
+<body>
+    <div class="error-box .msg-box"><label></label>
+        <div class="close-btn">
+            <img src="../svg/close-svgrepo-com.svg" alt="">
+        </div>
+    </div>
+    <div class="profile-bx">
+        <div class="user-info">
+            <img src="../svg/peakpx (13).jpg" alt="user profile" id="user-profile-pic">
+            <lable class="user-name" id="pr-user-name">Dasun Sathsara Dahanayaka</lable>
+            <label class="user-class" id="pr-class-name">10-C</label>
+        </div>
+        <a href="../php/logout.php">
+            <div class="log-out-btn">
+                <img src="../svg/log-out-circle-svgrepo-com.svg" alt="">
+            </div>
+        </a>
+
+        <div class="toggle-btn">
+            <img src="../svg/left-arrow-backup-2-svgrepo-com.svg" alt="" class="left-arrow">
+            <img src="../svg/right-arrow-backup-2-svgrepo-com.svg" alt="" class="right-arrow">
+        </div>
+    </div>
+
+    <!-- nav bar -->
+    <nav>
+        <ul>
+            <li class="active" id="classroom-btn">
+                <span class="icon">
+                    <img src="../svg/home-svgrepo-com.svg">
+                </span>
+                <span class="title">Classroom</span>
+            </li>
+
+            <li id="resources-btn">
+                <span class="icon">
+                    <img src="../svg/resource-management-database-svgrepo-com.svg">
+                </span>
+                <span class="title">Resources</span>
+            </li>
+
+            <li id="homeworks-btn">
+                <span class="icon">
+                    <img src="../svg/books-thin-svgrepo-com.svg">
+                </span>
+                <span class="title">Homeworks</span>
+            </li>
+
+            <li id="community-btn">
+                <span class="icon">
+                    <img src="../svg/community-manager-svgrepo-com.svg">
+                </span>
+                <span class="title">Community</span>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="background-anime-box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="site-loader">
+        <div class='loading-container'>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <main>
+        <!-- Classroom -->
+        <section class="classroom active">
+            <div class="container">
+                <h1 id="no-class-title">You have No class right now..</h1>
+                <div class="class-started">
+                    <h2 class="sub_title">science</h2>
+                    <div class="teacher-info-bx">
+                        <div class="teacher-profile-pic">
+                            <img src="" alt="" id="steaming-teacher-pic">
+                        </div>
+                        <label></label>
+                    </div>
+                    <div class="steaming-classes-info">
+                        <!-- <label for=""></label> -->
+                        <!-- <div>10-c</div> -->
+                    </div>
+                    <div class="class-time-box">10.30 am To 12.30 pm</div>
+                    <div class="join-class-box">
+                        <a id="login-class-btn"><button class="join-class-btn">JOIN</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="resources">
+            <h1>Resources For you..</h1>
+            <div class="container" id="resource-box">
+                <div class="resource-div">
+                    <div class="date-div">10/02/2023</div>
+                    <h1>science</h1>
+                    <h2>Arilfitial intelligence</h2>
+                    <p>Artificial intelligence (AI) refers to the development of computer systems that can perform tasks that would typically require human intelligence to accomplish, such as perception, reasoning, learning, and problem-solving.</p>
+                    <div class="download-resource-btn"> download </div>
+                </div>
+
+                <div class="more-btn">more</div>
+            </div>
+        </section>
+        <section class="homeworks">
+            <div class="container-head">
+                <label for="" class="active" id="todo-homeworks-btn">ToDo</label>
+                <label for="" class="" id="finished-homeworks-btn">finished</label>
+            </div>
+            <div class="container">
+                <div class="user-homework">
+                    <h1>Homeworks</h1>
+                    <ul id="st-homework-ul">
+                        <!-- <li>
+                            <div class="homework-subject">English</div>
+                            <div class="homework-title">intelligence (AI) refers </div>
+                            <div class="homework-date">22/03</div>
+                            <div class="Do-btn">Do</div>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="uploaded-homeworks">
+                    <h1>Uploaded Homeworks</h1>
+                    <ul id="uploaded-homework-ul">
+                        <!-- <li>
+                            <div class="homework-subject">English</div>
+                            <div class="homework-title">intelligence (AI) refers </div>
+                            <div class="status">pending</div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="community">
+            <div class="container">
+                <div class="community-head-box">
+                    <h1>Your classmates.</h1>
+                </div>
+                <div class="community-search-box">
+                    <div class="input-search-box">
+                        <input type="text">
+                        <div class="search-icon">
+                            <img src="../svg/search-square-svgrepo-com.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="community-list">
+                    <ul id="student-community-ul">
+                        <label class="active">You Have no classmates</label>
+                        <li>
+                            <div class="profile-pic">
+                                <img src="" alt="">
+                            </div>
+                            <div class="user-name">Dasun Sathsara</div>
+                            <div class="user-class">10-c</div>
+                        </li>
+
+                        <div class="more-btn">see more</div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="../js/interface.js"></script>
+    <script src="../js/functions.js"></script>
+    <script src="../js/student-interface.js"></script>
+</body>
+
+</html>

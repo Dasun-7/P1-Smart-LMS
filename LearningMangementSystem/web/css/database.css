@@ -1,0 +1,619 @@
+body {
+    background: var(--background-color)
+}
+
+.msg-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffffd2;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 1.2rem;
+    z-index: 50;
+    transition: .3s;
+    transform: translateY(-100%);
+}
+
+.msg-box.active {
+    transform: translateY(0);
+}
+
+.msg-box .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    cursor: pointer;
+}
+
+.msg-box .close-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    position: absolute;
+    left: 50%;
+    top: 5vh;
+    transform: translateX(-50%);
+    padding: 2rem;
+    border: 1px solid #fff;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: var(--font);
+}
+
+.tab-radio {
+    display: absolute;
+    display: none;
+}
+
+.container-head {
+    display: flex;
+    justify-content: center;
+}
+
+.container-head label {
+    position: relative;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.container-head label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: .4s;
+}
+
+#teacher-lbl:checked~main .container-head label:nth-child(1) {
+    color: #000;
+}
+
+#teacher-lbl:checked~main .container-head label:nth-child(1)::after {
+    transform: translateY(0);
+}
+
+#student-lbl:checked~main .container-head label:nth-child(2) {
+    color: #000;
+}
+
+#student-lbl:checked~main .container-head label:nth-child(2)::after {
+    transform: translateY(0);
+}
+
+#class-lbl:checked~main .container-head label:nth-child(3) {
+    color: #000;
+}
+
+#class-lbl:checked~main .container-head label:nth-child(3)::after {
+    transform: translateY(0);
+}
+
+#subject-lbl:checked~main .container-head label:nth-child(4) {
+    color: #000;
+}
+
+#subject-lbl:checked~main .container-head label:nth-child(4)::after {
+    transform: translateY(0);
+}
+
+.container {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.container .tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: none;
+    animation: tab-anime .4s forwards;
+}
+
+@keyframes tab-anime {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#teacher-lbl:checked~main .container .teacher-data {
+    display: flex;
+}
+
+#student-lbl:checked~main .container .student-data {
+    display: flex;
+}
+
+#class-lbl:checked~main .container .class-data {
+    display: flex;
+}
+
+#subject-lbl:checked~main .container .subject-data {
+    display: flex;
+}
+
+.container .user-data {
+    padding-top: 1rem;
+    flex-direction: column;
+}
+
+.container .user-data .list-header {
+    width: 100%;
+    display: flex;
+}
+
+.container .user-data .list-header .left,
+.container .user-data .list-header .right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 1rem;
+}
+
+.container .user-data .list-header .right {
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+
+.container .user-data .list-header .right select {
+    font-size: 1.3rem;
+    padding: 5px;
+    text-transform: capitalize;
+}
+
+.container .user-data .list-header .search-bx {
+    display: flex;
+    border: solid 1px #fff;
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 5px;
+    border-radius: 30px;
+    padding-right: .6rem;
+    transition: .3s;
+}
+
+.container .user-data .list-header .search-bx:focus-within {
+    box-shadow: 0 0 40px #fff;
+}
+
+.container .user-data .list-header .search-bx input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding-left: 1rem;
+}
+
+.container .user-data .list-header .search-bx .search-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.container .user-data .list-header .search-bx .search-icon img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.container .user-data .list {
+    border-top: 1px #fff solid;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.container .user-data .list::-webkit-scrollbar {
+    display: none;
+}
+
+.container .user-data .list ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+}
+
+.container .user-data .list ul li {
+    position: relative;
+    display: flex;
+    width: 350px;
+    height: 35px;
+    border: #fff solid 1px;
+    padding: 5px;
+    cursor: pointer;
+    padding: 5px 50px;
+    align-items: center;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.container .user-data .list ul li .user-pic {
+    width: 40px;
+    height: 100%;
+    background: #ffffff94;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container .user-data .list ul li .user-class {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.container .user-data .list ul li .user-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .cs-data {
+    flex-direction: column;
+}
+
+.container .cs-data .add-cs-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .cs-data .add-cs-box .add-cs-btn {
+    position: relative;
+    --btn-color: rgb(212, 255, 0);
+    border: solid var(--btn-color) 2px;
+    padding: 5px 25px;
+    display: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin: 2.5rem;
+    box-shadow: 0 0 80px var(--btn-color);
+    transition: .3s;
+    overflow: hidden;
+}
+
+.container .subject-data .add-cs-box .add-cs-btn {
+    --btn-color: #41d3ff;
+}
+
+.container .cs-data .add-cs-box .add-cs-btn:hover {
+    color: #000;
+    box-shadow: 0 0 0px var(--btn-color);
+    letter-spacing: 1px;
+}
+
+.container .cs-data .add-cs-box .add-cs-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-color);
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: .3s;
+}
+
+.container .cs-data .add-cs-box .add-cs-btn:hover::before {
+    transform: translateY(0);
+}
+
+.container .cs-data .add-cs-box form {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+    border: rgba(255, 255, 255, 0.671) 1px solid;
+    text-transform: capitalize;
+    gap: 5px;
+    font-size: 1.3rem;
+    width: 600px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(15px);
+    box-sizing: border-box;
+    margin: 1rem;
+}
+
+.container .cs-data .add-cs-box form .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.container .cs-data .add-cs-box form .close-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .cs-data .add-cs-box form:focus-within {
+    box-shadow: inset 0 0 150px #ffffff2e;
+}
+
+.container .cs-data .add-cs-box form input {
+    margin-bottom: 10px;
+    padding-left: 1rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    background: transparent;
+    color: #fff;
+}
+
+.container .cs-data .add-cs-box form .upload-btn-bx {
+    display: flex;
+    justify-content: center;
+}
+
+.container .cs-data .add-cs-box form .upload-btn-bx .upload-cs-btn {
+    padding: 5px 25px;
+    font-size: 1.3rem;
+    background: rgb(42, 255, 95);
+    color: #000;
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 20px;
+}
+
+.container .cs-data .add-cs-box form .upload-btn-bx .upload-cs-btn:hover {
+    letter-spacing: 2px;
+    background: rgb(68, 254, 114);
+}
+
+.container .cs-data .add-cs-box form.active,
+.container .cs-data .add-cs-box .add-cs-btn.active {
+    display: flex;
+}
+
+.container .cs-data .cs-list {
+    padding-top: 2vh;
+}
+
+.container .cs-data .cs-list ul {
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container .cs-data .cs-list ul li {
+    position: relative;
+    display: flex;
+    padding: 5px;
+    border: solid #fff 1px;
+    width: 300px;
+    padding-right: 35px;
+}
+
+.container .cs-data .cs-list ul li .cs-id,
+.container .cs-data .cs-list ul li .cs-name {
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.container .cs-data .cs-list ul li .delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-left: 1px solid #fff;
+    transition: .2s;
+}
+
+.container .cs-data .cs-list ul li .delete-btn:hover {
+    box-shadow: inset 0 0 20px red;
+}
+
+.container .cs-data .cs-list ul li .delete-btn img {
+    width: 90%;
+    height: 90%;
+}
+
+.container .cs-data .cs-list ul::-webkit-scrollbar {
+    display: none;
+}
+
+.add-user-bx {
+    position: fixed;
+    bottom: 50px;
+    left: 30px;
+}
+
+.add-user-bx .add-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 100px #000;
+}
+
+.add-user-bx.active .add-icon {
+    display: none;
+}
+
+.add-user-bx .add-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    border: #fff 1px solid;
+}
+
+.add-user-list {
+    display: none;
+    flex-direction: column;
+    width: 200px;
+}
+
+.add-user-bx.active .add-user-list {
+    display: flex;
+}
+
+.add-user-bx .add-user-list a {
+    width: 100%;
+    height: 25px;
+    background: #ffffffb6;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: var(--font);
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.add-user-bx .add-user-list a:hover {
+    background: #ffffff;
+}
+
+.add-user-bx .close-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(120%, -50%);
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.add-user-bx .close-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:500px) {
+    .add-user-bx .add-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .container .cs-data .add-cs-box form {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    main {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    main .list-header .right label {
+        font-size: 1.2rem;
+    }
+    main .list-header .right select {
+        font-size: 1rem;
+    }
+    .container .cs-data .add-cs-box {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .container .cs-data .add-cs-box form {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .container-head {
+        font-size: 1rem;
+    }
+    main {
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding-top: 4vh;
+        border: none;
+        border-radius: 0;
+    }
+    .container {
+        height: 100%;
+    }
+    main .list-header {
+        flex-direction: column;
+    }
+    main .list-header .right {
+        width: 10px;
+        padding: 0;
+        gap: 5px;
+    }
+    main .list-header .right label {
+        font-size: 1rem;
+    }
+    .container .user-data .list-header .left,
+    .container .user-data .list-header .right {
+        padding: 10px;
+        gap: 10px;
+    }
+    .container .user-data .list-header .left .search-bx {
+        box-sizing: border-box;
+        width: 300px;
+    }
+    .container .user-data .list-header .right select {
+        font-size: 1rem;
+    }
+    .container .user-data .list {
+        height: 100
+    }
+}

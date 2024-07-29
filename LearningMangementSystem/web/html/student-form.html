@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/student/student-form.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student's Form</h1>
+
+        <form id="add-student-form" method="POST">
+            <div class="left">
+                <div class="profile-box">
+                    <div class="profile-pic">
+                        <img src="" alt="" id="profile-img">
+                    </div>
+                    <label for="user-pic">select</label>
+                    <input type="file" id="user-pic" name="profile-pic" hidden>
+                </div>
+                <div class="input-indexno-box input-box">
+                    <label for="">student IndexNo :</label>
+                    <input name="indexno" type="text" id="student-id-input" required>
+                </div>
+                <div class="input-box">
+                    <label for="">student password :</label>
+                    <input type="text" id="student-password-input" name="password" required>
+                </div>
+                <div class="input-name-box input-box">
+                    <label for="">student name :</label>
+                    <input type="text" id="student-name-input" name="name" required>
+                </div>
+                <div class="input-email-box input-box">
+                    <label for="">Email :</label>
+                    <input type="text" id="student-email-input" name="email">
+                </div>
+                <div class="input-class-box input-box">
+                    <label for="">Class :</label>
+                    <select id="student-class-input" name="class"></select>
+                </div>
+            </div>
+            <div class="right">
+                <h5>Student's subjects</h5>
+                <div class="selected-subjects">
+                    <fieldset>
+                        <label>no subject selected</label>
+                        <!-- <div>science</div> -->
+                    </fieldset>
+                </div>
+                <div class="select-sub-btn-bx active">
+                    <div class="select-btn">select</div>
+                </div>
+                <div class="sub-select-box">
+                    <label for="" class="close-btn">
+                        <img src="../svg/close-svgrepo-com.svg" alt="">
+                    </label>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <label for="add-st-form-btn" class="upload-btn">Upload</label>
+            </div>
+            <input type="submit" value="" id="add-st-form-btn" hidden>
+        </form>
+    </div>
+    <div class="msg-box">
+        <div class="close-btn">
+            <img src="../svg/close-svgrepo-com.svg" alt="">
+        </div>
+        <label></label>
+    </div>
+    <script src="../js/functions.js"></script>
+    <script src="../js/student-form.js"></script>
+</body>
+
+</html>

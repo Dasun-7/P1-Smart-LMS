@@ -1,0 +1,147 @@
+main section.resources {
+    top: 10%;
+    width: 85%;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    color: #fff;
+    font-family: var(--font);
+    flex-direction: column;
+    padding-top: 4vh;
+    transform: translate(-50%, 0);
+}
+
+main section.resources.active {
+    display: flex;
+    flex-direction: column;
+}
+
+main section.resources h1,
+main section.resources h2 {
+    letter-spacing: 2px;
+    pointer-events: none;
+    text-transform: capitalize;
+}
+
+main section.resources .container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-bottom: 7vh;
+    animation: container-anime 1s forwards;
+}
+
+main.profile-bx-active section.resources .container {
+    align-items: center;
+    justify-content: center;
+}
+
+main section.resources .container .resource-div {
+    padding: 15px;
+    border: solid #fff 1px;
+    width: 560px;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    padding-bottom: 3rem;
+    overflow: hidden;
+}
+
+main section.resources .container .resource-div h1 {
+    text-align: center;
+    color: #00ffee;
+}
+
+main section.resources .container .resource-div h2 {
+    font-size: 1.4rem;
+}
+
+main section.resources .container .resource-div p {
+    padding: 10px;
+    color: #ffffffbb;
+}
+
+main section.resources .container .resource-div .download-resource-btn {
+    position: absolute;
+    --btn-color: red;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: solid 2px var(--btn-color);
+    text-transform: capitalize;
+    box-shadow: 0 0 40px var(--btn-color);
+    overflow: hidden;
+    transition: .4s;
+}
+
+main section.resources .container .resource-div .download-resource-btn:hover {
+    box-shadow: 0 0 0 red;
+}
+
+main section.resources .container .resource-div .download-resource-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    z-index: -1;
+    background: var(--btn-color);
+    transition: .4s;
+}
+
+main section.resources .container .resource-div .download-resource-btn:hover::before {
+    transform: translateY(0%);
+}
+
+main section.resources .container .resource-div .date-div {
+    position: absolute;
+    right: 10px;
+}
+
+main section.resources .container .more-btn {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 20px;
+    box-shadow: inset 0 0 30px #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:500px) {
+    main section.resources {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+        padding: 0;
+        padding-top: 6vh;
+        padding-bottom: 6vh;
+    }
+}
+
+@media screen and (max-width:400px) {
+    main section.resources .container {
+        padding-bottom: 8vh;
+    }
+    main section.resources .container .resource-div h2 {
+        font-size: 1rem;
+    }
+    main section.resources .container .resource-div .date-div {
+        font-size: .7rem;
+    }
+    main section.resources .container .more-btn {
+        bottom: 1rem;
+    }
+}

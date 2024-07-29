@@ -1,0 +1,510 @@
+main section.classroom * {
+    position: relative;
+}
+
+main section.classroom {
+    top: 45%;
+    width: 50%;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    animation: linear infinite levitate-anime 3s;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+main.profile-bx-active section.classroom {
+    width: 60%;
+}
+
+main section.classroom.active {
+    display: flex;
+}
+
+main section.classroom .container {
+    animation: container-anime 2s forwards;
+}
+
+main section.classroom .start-stream {
+    display: none;
+    width: 500px;
+    height: 300px;
+    justify-content: center;
+}
+
+main section.classroom .start-stream h4 {
+    position: absolute;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    font-family: var(--font);
+    letter-spacing: 2px;
+    text-shadow: 0 0 40px #fff;
+}
+
+main section.classroom .start-stream button {
+    margin-top: 20px;
+    position: relative;
+    align-self: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    color: #fff;
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+    font-size: 2.5rem;
+    border: none;
+    background-repeat: repeat;
+    animation: slide-btn-background 10s linear infinite;
+}
+
+@keyframes slide-btn-background {
+    50% {
+        background-position: 1000px 0;
+    }
+}
+
+main section.classroom .start-stream.active {
+    display: flex;
+}
+
+main section.classroom .create-room-form {
+    display: none;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    top: 0;
+    flex-direction: column;
+    color: #fff;
+    overflow-y: scroll;
+}
+
+main section.classroom .create-room-form::-webkit-scrollbar {
+    width: 0px;
+}
+
+main section.classroom .create-room-form div {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: var(--font);
+    margin-top: 20px;
+    display: flex;
+    gap: 25px;
+}
+
+main section.classroom .create-room-form h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    pointer-events: none;
+    font-family: var(--font);
+}
+
+main section.classroom .create-room-form .sub-select-box select {
+    width: 200px;
+    font-size: 1.5rem;
+    padding: 5px 20px;
+    text-transform: capitalize;
+}
+
+main section.classroom .create-room-form .class-select-box fieldset {
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+main section.classroom .create-room-form .class-select-box fieldset::-webkit-scrollbar {
+    width: 0;
+}
+
+main section.classroom .create-room-form .class-select-box fieldset div {
+    width: 60px;
+    border: #fff solid 1px;
+    padding: 5px;
+    margin: 0;
+    text-transform: capitalize;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 40px #ffffff72;
+}
+
+main section.classroom .create-room-form .class-select-box legend {
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+main section.classroom .create-room-form .class-select-box fieldset label {
+    font-size: 1rem;
+    color: #ffffff98;
+}
+
+main section.classroom .create-room-form .class-select-box .choose-subjects {
+    box-shadow: inset 0 0 30px rgb(6, 255, 27);
+    background: transparent;
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section.classroom .create-room-form .class-select-box .choose-subjects:hover {
+    box-shadow: 0 0 30px rgb(6, 255, 27);
+    transition: .4s;
+    letter-spacing: 1px;
+}
+
+main section.classroom .create-room-form .time-box label {
+    margin: 5px;
+}
+
+main section.classroom .create-room-form .time-box input {
+    padding: 0px 10px;
+    font-size: 1.1rem;
+    height: 30px;
+    width: 100px;
+}
+
+main section.classroom .create-room-form .link-box .input-link-box {
+    width: 50%;
+    height: 35px;
+    border: solid 1px #fff;
+    margin: 0;
+}
+
+main section.classroom .create-room-form .link-box .input-link-box input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    color: #fff;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+}
+
+main section.classroom .create-room-form .link-box .input-link-box .paste-btn {
+    width: 30px;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+main section.classroom .create-room-form .link-box .input-link-box .paste-btn img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+main section.classroom .create-room-form .submit-box {
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+main section.classroom .create-room-form .submit-box .submit-btn {
+    --border-color: rgb(68, 255, 47);
+    width: 200px;
+    height: 50px;
+    border: 3px var(--border-color) solid;
+    background: transparent;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+main section.classroom .create-room-form .submit-box .submit-btn:hover {
+    color: #000;
+}
+
+main section.classroom .create-room-form .submit-box .submit-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    background: var(--border-color);
+    transform: translate(-100%, -50%);
+    transition: .5s;
+    z-index: -1;
+}
+
+main section.classroom .create-room-form .submit-box .submit-btn:hover::before {
+    transform: translate(0%, -50%);
+    transition: .5s;
+}
+
+main section.classroom .create-room-form .submit-box .submit-btn::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    background: var(--border-color);
+    transform: translate(100%, -50%);
+    transition: .5s;
+    z-index: -1;
+}
+
+main section.classroom .create-room-form .submit-box .submit-btn:hover::after {
+    transform: translate(0%, -50%);
+    transition: .5s;
+}
+
+main section.classroom .create-room-form .close-btn {
+    all: revert;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: red;
+    cursor: pointer;
+}
+
+main section.classroom .create-room-form .close-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+main section.classroom .semi-error-box {
+    position: absolute;
+    display: none;
+    z-index: 40;
+    bottom: 20px;
+    left: 50%;
+    font-size: 1.5rem;
+    padding: 1px 15px;
+    background: #fff;
+    color: #000;
+    transform: translateX(-50%);
+    font-family: var(--font);
+}
+
+main section.classroom .create-room-form.active,
+main section.classroom .semi-error-box.active,
+main section.classroom .end-stream.active,
+main section.classroom .class-selection.active {
+    display: flex;
+}
+
+main section.classroom .end-stream {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section.classroom .end-stream h1 {
+    color: #fff;
+    text-align: center;
+}
+
+main section.classroom .end-stream .streaming-sign {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 40px;
+}
+
+main section.classroom .end-stream .streaming-sign img {
+    width: 100%;
+    height: 100%;
+    animation: 1s streaming-sign-anime infinite;
+}
+
+main section.classroom .end-stream .streaming-clases {
+    display: flex;
+    justify-content: space-around;
+}
+
+main section.classroom .end-stream .streaming-clases label {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: #fff;
+    box-shadow: inset 0 0 30px #fff;
+    padding: 5px 10px;
+}
+
+main section.classroom .end-stream .end-stream-btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+main section.classroom .end-stream .end-stream-btn {
+    padding: 15px 25px;
+    border: #fff solid 1px;
+    justify-self: center;
+    align-self: center;
+    background: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 0 0 100px #00eaff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+main section.classroom .end-stream .end-stream-btn:hover {
+    box-shadow: inset 0 0 100px #00eaff;
+    border: none;
+}
+
+main section.classroom .class-selection {
+    padding: 20px;
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid #fff;
+    width: 50%;
+    height: 100%;
+}
+
+main section.classroom .class-selection.active {
+    display: flex;
+}
+
+main section.classroom .class-selection div {
+    width: 60px;
+    border: #fff 1px solid;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+}
+
+main section.classroom .class-selection div.selected {
+    box-shadow: inset 0 0 30px rgb(0, 255, 8);
+}
+
+main section.classroom .class-selection .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    cursor: pointer;
+}
+
+@keyframes container-anime {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes levitate-anime {
+    50% {
+        transform: translate(-50%, calc(-50% - 15px));
+    }
+}
+
+@keyframes streaming-sign-anime {
+    10% {
+        transform: scale(.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:900px) {
+    main section.classroom {
+        width: 70%;
+    }
+    main section.classroom .create-room-form {
+        overflow: visible;
+    }
+    main section.classroom .create-room-form div {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    main section.classroom {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    main section.classroom {
+        width: 90%;
+        height: 100%;
+    }
+    main section.classroom .create-room-form .sub-select-box select {
+        width: 150px;
+        font-size: 1.2rem;
+    }
+    main section.classroom .create-room-form .box {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    main section.classroom .create-room-form fieldset {
+        width: 100%;
+    }
+    main section.classroom .create-room-form .class-select-box .choose-subjects {
+        margin: 10px;
+        width: 120px;
+        height: 30px;
+        background: rgb(1, 255, 1);
+        border-radius: 15px;
+        color: #000;
+    }
+    main section.classroom .create-room-form .time-box input {
+        width: 100px;
+        gap: 0;
+        margin: 0;
+        font-size: .9rem;
+    }
+    main section.classroom .create-room-form .time-box label {
+        margin: 0 10px;
+    }
+    main section.classroom .create-room-form .link-box {
+        flex-direction: column;
+    }
+    main section.classroom .create-room-form .link-box .input-link-box {
+        width: 100%;
+    }
+    main section.classroom .class-selection {
+        height: fit-content;
+        width: 80%;
+    }
+    main section.classroom .class-selection div {
+        width: 60px;
+        height: 20px;
+        font-size: 1.1rem;
+    }
+}

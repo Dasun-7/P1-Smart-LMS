@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Form</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/teacher/teacher-form.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Teacher's Form</h1>
+
+        <form action="" id="teacher-form">
+            <div class="left">
+                <div class="profile-box">
+                    <div class="profile-pic">
+                        <img src="" alt="" id="profile-img">
+                    </div>
+                    <label for="user-pic">select</label>
+                    <input type="file" id="user-pic" name="profile-pic" hidden>
+                </div>
+                <div class="input-indexno-box input-box">
+                    <label for="">teacher id :</label>
+                    <input type="text" id="teacher-id-input" name="teacher_id" required>
+                </div>
+                <div class=" input-box">
+                    <label for="">password :</label>
+                    <input type="text" id="teacher-password-input" name="password" required>
+                </div>
+                <div class="input-name-box input-box">
+                    <label for="">teacher's name :</label>
+                    <input type="text" id="teacher-name-input" name="name" required>
+                </div>
+                <div class="input-email-box input-box">
+                    <label for="">Email :</label>
+                    <input type="text" id="teacher-email-input" name="email">
+                </div>
+                <div class="input-class-box input-box">
+                    <label for="">homeroom Class :</label>
+                    <select id="teacher-homeroom-input">
+                        <option value="none" selected>none</option>
+                    <option value="">10-C</option>
+                    <option value="">11-c</option>
+                    <option value="">9-a</option>
+                </select>
+                </div>
+            </div>
+            <div class="right">
+                <h5>teaching subjects</h5>
+                <div class="selected-subjects">
+                    <fieldset>
+                        <label>no subject selected</label>
+                        <!-- <div>science</div> -->
+                    </fieldset>
+                </div>
+                <div class="select-sub-btn-bx active">
+                    <div class="select-btn">select</div>
+                </div>
+                <div class="sub-select-box">
+                    <label for="" class="close-btn">
+                        <img src="../svg/close-svgrepo-com.svg" alt="">
+                    </label>
+                </div>
+
+                <h5 class="class-select-h5">teaching classes</h5>
+                <div class="selected-classes">
+                    <fieldset>
+                        <label>no class selected</label>
+                        <!-- <div>10-c</div> -->
+                    </fieldset>
+                </div>
+                <div class="select-class-btn-bx active">
+                    <div class="select-btn">select</div>
+                </div>
+                <div class="class-select-box">
+                    <label for="" class="close-btn">
+                        <img src="../svg/close-svgrepo-com.svg" alt="">
+                    </label>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <input type="submit" id="teahcer-form-submit-btn" value="" hidden>
+                <label for="teahcer-form-submit-btn" class="upload-btn">Upload</label>
+            </div>
+        </form>
+    </div>
+    <div class="msg-box">
+        <div class="close-btn">
+            <img src="../svg/close-svgrepo-com.svg" alt="">
+        </div>
+        <label>Faild to upload data !!</label>
+    </div>
+    <script src="../js/functions.js"></script>
+    <script src="../js/teacher-form.js"></script>
+</body>
+
+</html>

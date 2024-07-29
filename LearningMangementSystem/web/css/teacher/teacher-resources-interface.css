@@ -1,0 +1,532 @@
+main section.resources {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    transform: translate(-50%, 0);
+    width: 80%;
+}
+
+main section.resources.active {
+    display: flex;
+}
+
+main section.resources .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main section.resources .container .add-resourse-box {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid#fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-btn-box {
+    display: none;
+    animation: container-anime 1.2s forwards;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-btn-box.active {
+    display: flex;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-btn {
+    padding: 10px 20px;
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(253, 101, 133, 11) 0%, rgba(255, 211, 165, 1) 90%);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin: 30px;
+    font-family: var(--font);
+    cursor: pointer;
+    animation: 8s button-background-anime linear infinite;
+    background-size: 500% 500%;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.3rem;
+    font-family: var(--font);
+    animation: container-anime 1.2s forwards;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form.active {
+    display: flex;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    cursor: pointer;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .close-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .title-box,
+main section.resources .container .add-resourse-box .add-resourse-form .info-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .title-box input {
+    height: 35px;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    border-left: 2px solid #fff;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .title-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-size: 500% 500%;
+    background-repeat: repeat-x;
+    z-index: -1;
+    background: #fff;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .title-box:focus-within::after {
+    animation: 5s linear infinite input-border-anime;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .info-box textarea {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 1px solid #fff;
+    color: #ffffffa7;
+    background: transparent;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .info-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-size: 500% 500%;
+    background-repeat: repeat-x;
+    z-index: 1;
+    background: #fff;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .info-box:focus-within::after {
+    animation: 5s linear infinite input-border-anime;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .sub-select-box select {
+    width: 150px;
+    height: 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-select-box legend {
+    font-size: 1rem;
+    padding: 10px 10px
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-select-box fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-select-box fieldset div {
+    width: 60px;
+    box-shadow: inset 0 0 30px #00d0ff;
+    text-align: center;
+    text-transform: capitalize;
+    pointer-events: none;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-select-box .choose-class-btn {
+    width: 150px;
+    border: 2px solid rgb(0, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: rgb(0, 255, 0);
+    cursor: pointer;
+    padding: 2px;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .select-file-box label {
+    background: rgb(0, 255, 242);
+    padding: 2px 10px;
+    color: #000;
+    border: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .upload-res-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .upload-res-box .upload-res-box-btn {
+    background: transparent;
+    padding: 15px 30px;
+    cursor: pointer;
+    border: 2px solid rgb(92, 255, 47);
+    color: rgb(92, 255, 47);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .upload-res-box .upload-res-box-btn:hover {
+    box-shadow: 0 0 80px rgb(92, 255, 47);
+    letter-spacing: 1px;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form fieldset label {
+    font-size: .9rem;
+    color: #ffffff94;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-selection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background: var(--background-color);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 10px;
+    display: none;
+    animation: container-anime 1.2s forwards;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-selection.active {
+    display: flex;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-selection div {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: inset 0 0 40px #ffffff;
+    width: 80px;
+    height: 30px;
+    text-transform: capitalize;
+    padding: 10px;
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-selection div.selected {
+    box-shadow: inset 0 0 40px #00ff77;
+}
+
+main section.resources .container .add-resourse-box .add-resourse-form .class-selection .close-btn {
+    background: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main section.resources .container .uploaded-resources {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5vh;
+    animation: container-anime 1.2s forwards;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-head {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-head .left,
+main section.resources .container .uploaded-resources .uploaded-resources-head .right {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: var(--font);
+    text-transform: capitalize;
+    gap: 10%;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-head select {
+    width: 150px;
+    font-size: 1.2rem;
+    padding: 5px;
+    text-transform: capitalize;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul {
+    position: relative;
+    padding: 20px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul label {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-family: var(--font);
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul .more-btn {
+    width: 100px;
+    height: 20px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 10px;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul .more-btn:hover {
+    box-shadow: inset 0 0 30px #fff;
+    color: #000;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul::-webkit-scrollbar {
+    display: none;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li {
+    position: relative;
+    display: flex;
+    border: 1px #fff solid;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--font);
+    justify-content: space-around;
+    text-transform: capitalize;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px;
+    max-height: 40px;
+    padding-right: 60px;
+    width: 32vw;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li h5 {
+    font-size: .8rem;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #00ffff;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li .title {
+    overflow: scroll;
+    max-width: 40%;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li .title::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li .delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+    border-left: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li .delete-btn:hover {
+    box-shadow: inset 0 0 40px rgb(255, 75, 75);
+}
+
+main section.resources .container .uploaded-resources .uploaded-resources-list ul li .delete-btn img {
+    width: 60%;
+    height: 60%;
+}
+
+@keyframes input-border-anime {
+    100% {
+        background-position: 5000px 0;
+    }
+}
+
+@keyframes button-background-anime {
+    100% {
+        background-position: 500% 500%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    main section.resources .container .uploaded-resources .uploaded-resources-list ul li {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    main section.resources .container .uploaded-resources .uploaded-resources-head .left,
+    main section.resources .container .uploaded-resources .uploaded-resources-head .right {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    main section.resources .container .uploaded-resources .uploaded-resources-head select {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    main section.resources {
+        width: 100%;
+        top: 0;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-list ul {
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 6vh;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-list ul li {
+        font-size: 1rem;
+        margin: 5px 10px;
+        height: 30px;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-form .upload-res-box .upload-res-box-btn {
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-list ul li h5 {
+        font-size: .6rem;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-list ul li .delete-btn {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    main section.resources .container .add-resourse-box form {
+        margin-top: 3vh;
+        font-size: 1rem;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-form .close-btn {
+        left: 50%;
+        top: 105%;
+        transform: translate(-50%, -50%);
+        width: 25px;
+        height: 25px;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-btn {
+        font-size: 1.2rem;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-form .sub-select-box select {
+        width: 100px;
+        font-size: 1rem;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-head select {
+        font-size: 1rem;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-head .left,
+    main section.resources .container .uploaded-resources .uploaded-resources-head .right {
+        gap: 5%;
+        font-size: .9rem;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-head {
+        margin-bottom: 3vh;
+    }
+    main section.resources .container .uploaded-resources .uploaded-resources-list ul li {
+        border-radius: 0;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-form .class-select-box .choose-class-btn {
+        width: 100px;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-form .class-selection div {
+        font-size: 1rem;
+        width: 40px;
+        padding: 0 10px;
+    }
+    main section.resources .container .add-resourse-box .add-resourse-form .class-selection .close-btn {
+        width: 90px;
+        border-radius: 10px;
+    }
+}

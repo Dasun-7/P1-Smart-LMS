@@ -1,0 +1,176 @@
+main section.classroom {
+    top: 45%;
+    width: 40%;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+main section.classroom .container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    animation: container-anime 1s forwards;
+}
+
+main section.classroom .container h1 {
+    color: #fff;
+    font-family: var(--font);
+    letter-spacing: 2px;
+    margin: 50px;
+    text-align: center;
+    pointer-events: none;
+}
+
+main section.classroom .class-started {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font);
+    color: #fff;
+}
+
+main section.classroom .class-started.active {
+    display: flex;
+}
+
+main section.classroom .class-started h2 {
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    pointer-events: none;
+    text-transform: capitalize;
+    margin: 10px;
+}
+
+main section.classroom .class-started .teacher-info-bx {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 1rem;
+    text-align: center;
+}
+
+main section.classroom .class-started .teacher-info-bx .teacher-profile-pic {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.559);
+}
+
+main section.classroom .class-started .teacher-info-bx .teacher-profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main section.classroom .class-started .steaming-classes-info {
+    display: flex;
+    gap: 1rem;
+    text-transform: capitalize;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main section.classroom .class-started .steaming-classes-info div {
+    display: flex;
+    padding: 5px 15px;
+    box-shadow: inset 0 0 30px #fff;
+    ;
+}
+
+main section.classroom .class-started .class-time-box {
+    margin: 1rem;
+}
+
+main section.classroom .class-started .join-class-box button {
+    position: relative;
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: .5rem 2.5rem;
+    border-radius: 35px;
+    background: transparent;
+    border: rgb(0, 255, 0) solid 1px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 2rem;
+    box-shadow: 0 0 100px rgb(0, 255, 0);
+    overflow: hidden;
+    transition: .4s;
+}
+
+main section.classroom .class-started .join-class-box button:hover {
+    color: #000;
+    box-shadow: 0 0 0 greenyellow;
+}
+
+main section.classroom .class-started .join-class-box button::after,
+main section.classroom .class-started .join-class-box button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 255, 0);
+    z-index: -1;
+    transition: .8s;
+}
+
+main section.classroom .class-started .join-class-box button:hover::after,
+main section.classroom .class-started .join-class-box button:hover::before {
+    transform: translate(0, 0);
+}
+
+main section.classroom .class-started .join-class-box button::before {
+    transform: translate(0, -100%);
+}
+
+main section.classroom .class-started .join-class-box button::after {
+    transform: translate(0, 100%);
+}
+
+@media screen and (max-width:900px) {
+    main section.classroom {
+        width: 60%;
+    }
+    main section.classroom .class-started .join-class-box button {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    main section.classroom {
+        width: 80%;
+    }
+    main section.classroom .class-started .join-class-box button {
+        box-shadow: none;
+        color: #000;
+    }
+    main section.classroom .class-started .join-class-box button::after,
+    main section.classroom .class-started .join-class-box button::before {
+        transform: translate(0, 0);
+    }
+    main section.classroom .container h1 {
+        margin: 30px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    main section.classroom .class-started .join-class-box button {
+        font-size: 1.5rem;
+    }
+    main section.classroom .container h1 {
+        margin: 10px;
+        font-size: 1.1rem;
+    }
+}

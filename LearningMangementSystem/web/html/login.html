@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login-styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form">
+            <h1>Smart LMS</h1>
+            <form>
+                <label>User name</label>
+                <div class="inputBx typing-box">
+                    <input type="text" required id='username-input'>
+                    <div class="svg">
+                        <img src="../svg/user-svgrepo-com (1).svg" alt="">
+                    </div>
+                </div>
+                <label>Password</label>
+                <div class="inputBx password typing-box">
+                    <input type="password" required id="password-input">
+                    <div class="svg" id="show-pass-btn">
+                        <img src="../svg/see-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+                <div class="inputBx login-btn">
+                    <input type="submit" value="Login" class="">
+                </div>
+            </form>
+            <label>Forgot Password ? <a href="">Click Here!</a></label>
+            <div class="error-box"></div>
+        </div>
+
+        <div class="main-error-box">
+            <div class="close-btn">
+                <img src="../svg/close-svgrepo-com.svg">
+            </div>
+            <label></label>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

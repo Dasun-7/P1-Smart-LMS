@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD Homework</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/teacher/add-homework.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="homework-form">
+            <div class="div-bx title-bx">
+                <label for="">Title :</label>
+                <input type="text" name="title">
+            </div>
+
+            <div class="div-bx">
+                <label for="">subject</label>
+                <select name="subject" id="sub-select">
+                </select>
+            </div>
+
+            <div class="div-bx class-bx">
+                <div class="selected-classes active">
+                    <fieldset>
+                        <legend>Selected classes</legend>
+                        <label>no class selected</label>
+                    </fieldset>
+
+                    <div class="select-cls-btn">select</div>
+                </div>
+                <div class="class-select-bx">
+                    <label for="" class="close-btn">
+                        <img src="../svg/close-svgrepo-com.svg" alt="">
+                    </label>
+                </div>
+            </div>
+
+            <div class="div-bx qestion-box">
+                <h5>question</h5>
+                <textarea name="question"></textarea>
+            </div>
+
+            <div class="div-bx">
+                <label for="homework-attachment" class="attachment-icon">
+                    <img src="../svg/attachment-svgrepo-com.svg" alt="">
+                </label>
+                <input type="file" id="homework-attachment" name="hw-file">
+            </div>
+            <div class="div-bx">
+                <label for="">Time limit</label>
+                <select name="time-limit" id="">
+                    <option value="30_day" selected>30 day</option>
+                    <option value="1_day">21 day</option>
+                    <option value="14_day">14 day</option>
+                    <option value="7_day">7 day</option>
+                    <option value="5_day">5 day</option>
+                    <option value="3_day">3 day</option>
+                    <option value="1_day">1 day</option>                    
+                </select>
+            </div>
+            <div class="div-bx upload-btn-bx">
+                <label for="submit-btn" class="upload-btn">upload</label>
+                <input type="submit" id="submit-btn" hidden>
+            </div>
+        </form>
+    </div>
+
+    <div class="msg-box">
+        <div class="close-btn">
+            <img src="../svg/close-svgrepo-com.svg" alt="">
+        </div>
+        <label>Faild to upload data !!</label>
+    </div>
+    <script src="../js/functions.js"></script>
+    <script src="../js/add-homework.js"></script>
+</body>
+
+</html>

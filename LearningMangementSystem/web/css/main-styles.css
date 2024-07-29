@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Kanit:wght@300&family=Montserrat:wght@600&family=Nerko+One&family=Roboto+Mono&family=Stick+No+Bills:wght@200;300&family=Ubuntu&family=Yaldevi:wght@600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    list-style: none;
+}
+
+:root {
+    --background-color: #040d15;
+    --font: 'Cabin', sans-serif;
+    --nav-icon-size: 50px;
+    --nav-title-color: #000000b0;
+    --mobile-screen-width: 450px;
+    --profile-box-width: 200px;
+}
+
+.grow-btn {
+    --btn-color: rgb(0, 255, 0);
+    position: relative;
+    margin: 30px;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #fff;
+    border: 2px var(--btn-color) solid;
+    box-shadow: 0 0 79px var(--btn-color);
+    cursor: pointer;
+    transition: .4s;
+    overflow: hidden;
+}
+
+.grow-btn:hover {
+    color: #000;
+    box-shadow: 0 0 0 var(--btn-color);
+}
+
+.grow-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--btn-color);
+    transition: .4s;
+    height: 100%;
+    transform: translateY(-100%);
+    z-index: -1;
+}
+
+.grow-btn:hover::after {
+    transform: translateY(0%);
+}
+
+@media screen and (max-width:500px) {
+    .grow-btn {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .grow-btn {
+        font-size: .8rem;
+    }
+}
+
+@keyframes container-anime {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes levitate-anime {
+    50% {
+        transform: translate(-50%, calc(-100px - 15px));
+    }
+}

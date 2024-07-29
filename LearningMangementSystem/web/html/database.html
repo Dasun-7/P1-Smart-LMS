@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/database.css">
+</head>
+
+<body>
+    <input type="radio" name="db-labels" id="teacher-lbl" checked class="tab-radio">
+    <input type="radio" name="db-labels" id="student-lbl" class="tab-radio">
+    <input type="radio" name="db-labels" id="class-lbl" class="tab-radio">
+    <input type="radio" name="db-labels" id="subject-lbl" class="tab-radio">
+
+    <main>
+        <div class="container-head">
+            <label for="teacher-lbl">Teachers</label>
+            <label for="student-lbl">Students</label>
+            <label for="class-lbl">Classes</label>
+            <label for="subject-lbl">Subjects</label>
+        </div>
+        <div class="container">
+            <div class="student-data user-data tabs">
+                <div class="list-header">
+                    <div class="left">
+                        <div class="search-bx">
+                            <input type="text" placeholder="search student" id="st-search-input">
+                            <div class="search-icon">
+                                <img src="../svg/search-svgrepo-com.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <label for="">class : </label>
+                        <select id="st-search-class">
+                            <option value="all" selected>all</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <ul id="st-search-ul">
+                        <li>
+                            <div class="user-pic">
+                                <img src="" alt="">
+                            </div>
+                            <div class="user-name">Dasun sathsara</div>
+                            <div class="user-class">11-c</div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="teacher-data user-data tabs">
+                <div class="list-header">
+                    <div class="left">
+                        <div class="search-bx">
+                            <input type="text" placeholder="search teacher" id="th-search-input">
+                            <div class="search-icon">
+                                <img src="../svg/search-svgrepo-com.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <label for="">subject : </label>
+                        <select id="teacher-sub-search">
+                            <option value="all" selected>all</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <ul id="th-search-ul">
+                        <li>
+                            <div class="user-pic">
+                                <img src="" alt="">
+                            </div>
+                            <div class="user-name">Dasun sathsara</div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="class-data tabs cs-data">
+                <div class="add-cs-box" id="add-class-btn-bx">
+                    <div class="add-cs-btn active" id='add-class-btn'>add new class</div>
+                    <div class="add-cs-form">
+                        <form action="" id="add-class-form">
+                            <div class="close-btn">
+                                <img src="../svg/close-svgrepo-com.svg" alt="">
+                            </div>
+                            <h5>class id</h5>
+                            <input type="text" placeholder="enter class id" required id="class-id-input">
+                            <h5>enter class name</h5>
+                            <input type="text" placeholder="enter class name" required id="class-name-input">
+                            <div class="upload-btn-bx">
+                                <label for="add-class-form-btn" class="upload-cs-btn">ADD</label>
+                            </div>
+                            <input type="submit" value="" id="add-class-form-btn" hidden>
+                        </form>
+                    </div>
+                </div>
+                <div class="cs-list">
+                    <ul id="all-class-ul">
+                        <li>
+                            <div class="cs-id">c001</div>
+                            <div class="cs-name">10-c</div>
+                            <div class="delete-btn">
+                                <img src="../svg/delete-2-svgrepo-com.svg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subject-data tabs cs-data">
+                <div class="add-cs-box">
+                    <div class="add-cs-btn active" id='add-subject-btn'>add subject</div>
+                    <div class="add-cs-form">
+                        <form action="" id="add-subject-form">
+                            <div class="close-btn">
+                                <img src="../svg/close-svgrepo-com.svg" alt="">
+                            </div>
+                            <h5>subject id</h5>
+                            <input type="text" placeholder="Enter subject id" id="sub-id-input" required>
+                            <h5>subject name</h5>
+                            <input type="text" placeholder="enter subject name" id="sub-name-input" required>
+                            <div class="upload-btn-bx">
+                                <label for="add-subject-form-submit" class="upload-cs-btn">ADD</label>
+                                <input type="submit" value="" id="add-subject-form-submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="cs-list">
+                    <ul id="all-subs-ul">
+                        <li>
+                            <div class="cs-id">S001</div>
+                            <div class="cs-name">science</div>
+                            <div class="delete-btn">
+                                <img src="../svg/delete-2-svgrepo-com.svg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="add-user-bx">
+        <div class="add-icon">
+            <img src="../svg/add-user-svgrepo-com.svg" alt="">
+        </div>
+        <div class="add-user-list">
+            <a href="../html/student-form.html">add student</a>
+            <a href="../html/teacher-form.html">add teacher</a>
+            <div class="close-btn">
+                <img src="../svg/close-svgrepo-com.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="msg-box">
+        <div class="close-btn">
+            <img src="../svg/close-svgrepo-com.svg" alt="">
+        </div>
+        <label>Faild to upload data !!</label>
+    </div>
+    <script src="../js/functions.js"></script>
+    <script src="../js/database.js"></script>
+</body>
+
+</html>
